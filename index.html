@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folio & Co. | Books Worth Keeping</title>
+  <meta name="description" content="A small, carefully chosen online bookshop. Free shipping on orders over $50.">
+
+  <!-- Fonts (falls back to system fonts if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top announcement bar -->
+  <div class="announce">Free shipping on orders over $50 &middot; Use code <strong>READMORE10</strong> for 10% off your first order</div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Folio<span>&</span>Co.</a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Book of the Month</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCart" aria-label="Open cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 12H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">New season picks</p>
+          <h1>Find the book that<br><em>stays with you.</em></h1>
+          <p class="lead">Hand-picked stories, big ideas and quiet classics. Delivered to your door in two to four days.</p>
+          <div class="hero-buttons">
+            <a href="#shop" class="btn btn-gold">Shop bestsellers</a>
+            <a href="#featured" class="btn btn-ghost">Book of the month</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>12k+</strong> Titles</li>
+            <li><strong>4.9</strong> Customer rating</li>
+            <li><strong>48h</strong> Fast dispatch</li>
+          </ul>
+        </div>
+
+        <!-- Book covers drawn with CSS -->
+        <div class="hero-books" aria-hidden="true">
+          <div class="cover big b1" style="--c1:#c9772e; --c2:#7a3412;"><small>A Novel</small><h4>The Salt Road</h4><span>Mara Ellison</span></div>
+          <div class="cover big b2" style="--c1:#2f5d62; --c2:#14302f;"><small>Memoir</small><h4>Quiet Harbors</h4><span>Tomas Reyes</span></div>
+          <div class="cover big b3" style="--c1:#6b4a8a; --c2:#2c1c45;"><small>Fantasy</small><h4>Glass Kingdoms</h4><span>Iris Vandal</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust">
+      <div class="container trust-grid">
+        <div><strong>Free delivery</strong><span>On orders over $50</span></div>
+        <div><strong>Easy returns</strong><span>30 days, no questions</span></div>
+        <div><strong>Secure checkout</strong><span>Your data stays safe</span></div>
+        <div><strong>Gift wrapping</strong><span>Free on any order</span></div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow dark">Browse by mood</p>
+          <h2>Pick a shelf</h2>
+        </div>
+        <div class="cat-grid">
+          <a href="#shop" class="cat reveal" data-filter="Fiction"><span class="cat-num">01</span><h3>Fiction</h3><p>Novels that pull you in</p></a>
+          <a href="#shop" class="cat reveal" data-filter="Non-fiction"><span class="cat-num">02</span><h3>Non-fiction</h3><p>Real stories, sharp ideas</p></a>
+          <a href="#shop" class="cat reveal" data-filter="Fantasy"><span class="cat-num">03</span><h3>Fantasy</h3><p>Worlds worth getting lost in</p></a>
+          <a href="#shop" class="cat reveal" data-filter="Self-growth"><span class="cat-num">04</span><h3>Self-growth</h3><p>Small habits, big change</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop / bestsellers -->
+    <section class="section section-soft" id="shop">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow dark">Bestsellers</p>
+          <h2>What everyone is reading</h2>
+        </div>
+
+        <div class="filters reveal" id="filters">
+          <button class="filter active" data-filter="All">All</button>
+          <button class="filter" data-filter="Fiction">Fiction</button>
+          <button class="filter" data-filter="Non-fiction">Non-fiction</button>
+          <button class="filter" data-filter="Fantasy">Fantasy</button>
+          <button class="filter" data-filter="Self-growth">Self-growth</button>
+        </div>
+
+        <!-- Cards are added by script.js -->
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <!-- Book of the month -->
+    <section class="feature" id="featured">
+      <div class="container feature-inner">
+        <div class="feature-cover reveal">
+          <div class="cover huge" style="--c1:#d6a84e; --c2:#8a5a14;"><small>Book of the Month</small><h4>The Lantern Keeper</h4><span>Nora Whitlock</span></div>
+        </div>
+        <div class="feature-text reveal">
+          <p class="eyebrow">Editor's pick &middot; November</p>
+          <h2>The Lantern Keeper</h2>
+          <p class="by">by Nora Whitlock</p>
+          <p>On a cold island, one woman lights the same lamp every night for forty years. Then a ship arrives that should not exist. A slow, warm and gripping story about duty, memory and second chances.</p>
+          <div class="feature-price"><strong>$18.99</strong><s>$24.00</s><span class="badge">Save 21%</span></div>
+          <button class="btn btn-gold" data-add="99">Add to cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow dark">Reader love</p>
+          <h2>Words from our readers</h2>
+        </div>
+        <div class="review-grid">
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <p>"The books came wrapped like a gift and arrived in two days. I've already ordered three more."</p>
+            <div class="who"><span class="avatar">SA</span><div><strong>Sadia A.</strong><small>Verified buyer</small></div></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Great picks and fair prices. The monthly recommendation has not missed once for me."</p>
+            <div class="who"><span class="avatar">RK</span><div><strong>Rafi K.</strong><small>Verified buyer</small></div></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Clean site, easy checkout, and the packaging was lovely. Feels like a real neighborhood bookshop."</p>
+            <div class="who"><span class="avatar">LM</span><div><strong>Lena M.</strong><small>Verified buyer</small></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="newsletter">
+      <div class="container news-inner reveal">
+        <h2>Get 10% off your first order</h2>
+        <p>Join our reading list. One email a week with new arrivals and quiet recommendations.</p>
+        <form id="newsForm" novalidate>
+          <input type="email" id="newsEmail" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+        <p class="form-msg" id="newsMsg" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo light">Folio<span>&</span>Co.</a>
+        <p class="foot-note">A small bookshop for people who love the smell of new pages.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <a href="#shop">Bestsellers</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Book of the Month</a>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="container copy">&copy; <span id="year"></span> Folio &amp; Co. All rights reserved.</div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h3>Your cart</h3>
+      <button id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="ship-bar">
+      <p id="shipText"></p>
+      <div class="bar"><div class="bar-fill" id="barFill"></div></div>
+    </div>
+
+    <div class="drawer-body" id="cartItems"></div>
+
+    <div class="drawer-foot">
+      <div class="row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+      <button class="btn btn-dark full" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Small popup message -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
